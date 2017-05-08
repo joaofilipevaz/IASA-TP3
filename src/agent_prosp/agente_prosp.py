@@ -13,7 +13,8 @@ class AgenteProspector(Agente):
         return self.sensor_multiplo.detectar()
 
     def _processar(self, percepcao):
-
+        return self._controlo.processar(percepcao)
 
     def _actuar(self):
+        return self.actuador.actuar(accao)
 
