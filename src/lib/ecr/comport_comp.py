@@ -1,3 +1,5 @@
+import abc
+from lib.ecr.comportamento import Comportamento
 
 
 class ComportComp(Comportamento):
@@ -14,6 +16,6 @@ class ComportComp(Comportamento):
         if respostas:
             return self.selecionar_resposta(respostas)
 
-
+    @abc.abstractmethod
     def selecionar_resposta(self, respostas):
-        abstract
+        """da a resposta"""

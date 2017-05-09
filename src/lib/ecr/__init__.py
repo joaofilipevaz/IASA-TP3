@@ -1,3 +1,1 @@
-class Controlo:
-    def Processar(self, Processar):
-        return abstract
+from lib.ecr import *

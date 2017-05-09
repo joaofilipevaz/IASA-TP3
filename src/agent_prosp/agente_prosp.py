@@ -1,5 +1,6 @@
+import psa.agente as agente
 
-class AgenteProspector(Agente):
+class AgenteProspector(agente):
 
     def __init__(self, controlo):
         self.__controlo = controlo

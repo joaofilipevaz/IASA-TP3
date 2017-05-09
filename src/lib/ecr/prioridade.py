@@ -1,4 +1,4 @@
-
+from lib.ecr.comportamento import Comportamento
 
 class Prioridade(Comportamento):
 
