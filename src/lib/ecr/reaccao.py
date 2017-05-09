@@ -1,4 +1,7 @@
-def Reaccao(Comportamento):
+import abc
+
+
+def reaccao(comportamento):
 
     def activar(self, percepcao):
         estimulo = self.detectar_estimulo(percepcao)
@@ -6,8 +9,10 @@ def Reaccao(Comportamento):
             resposta = self.gerar_resposta(estimulo)
             return resposta
 
+    @abc.abstractmethod
     def _gerar_resposta(self, estimulo):
-        abstract
+        """Resposta"""
 
+    @abc.abstractmethod
     def _detectar_estimulo(self, percepcao):
-        abstract
+        """Estimulo"""

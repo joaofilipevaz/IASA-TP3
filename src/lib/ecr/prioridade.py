@@ -1,5 +1,6 @@
 from lib.ecr.comportamento import Comportamento
 
+
 class Prioridade(Comportamento):
 
     def selecionar_respostas(self, respostas):

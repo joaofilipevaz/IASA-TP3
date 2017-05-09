@@ -1,4 +1,4 @@
-from lib import ComportComp
+from lib.ecr.comport_comp import ComportComp
 
 
 class Hierarquia(ComportComp):
