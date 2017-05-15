@@ -1,7 +1,7 @@
 import abc
 
 
-class Comportamento:
+class Comportamento(object):
     __metaclass__ = abc.ABCMeta
 
     @abc.abstractmethod

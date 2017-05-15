@@ -1,5 +1,6 @@
 import psa.agente as agente
 
+
 class AgenteProspector(agente):
 
     def __init__(self, controlo):
@@ -19,4 +20,3 @@ class AgenteProspector(agente):
 
     def __actuar(self):
         return self.actuador.actuar(accao)
-
