@@ -1,7 +1,7 @@
 import abc
 
 
-def reaccao(comportamento):
+def Reaccao(comportamento):
 
     def activar(self, percepcao):
         estimulo = self.detectar_estimulo(percepcao)
