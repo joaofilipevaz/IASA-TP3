@@ -12,11 +12,10 @@ class ControloDelib:
         self.__planeador = planeador
 
     def __reconsiderar(self):
-        return self.__modelomundo.alterado
+        return self.__modelo_mundo.ModeloMundo.alterado() or self.__planeador.plano_pendente()
 
     def __deliberar(self):
         self.objectivo = "todos os alvos"
-
 
     def __planear(self):
         if self.objectivo:

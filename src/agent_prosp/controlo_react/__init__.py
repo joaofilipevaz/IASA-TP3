@@ -1,1 +1,1 @@
-from agent_prosp.controlo_react import ControloReact
+from agent_prosp.controlo_react import controlo_react
