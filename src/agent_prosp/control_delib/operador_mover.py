@@ -1,5 +1,6 @@
 from psa.accao import Mover
 from psa.util import mover
+from psa.util import dist
 
 class OperadorMover():
 
@@ -21,4 +22,4 @@ class OperadorMover():
             return None
 
     def custo(self, estado, novo_estado):
-        estado
+        return max(dist(estado, novo_estado), 1)
