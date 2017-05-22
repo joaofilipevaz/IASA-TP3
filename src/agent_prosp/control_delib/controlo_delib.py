@@ -4,9 +4,9 @@ import psa.util.dist()
 import psa.util.Mover(angulo, ang_abs = true)
 
 import modelo_mundo
+from agent_prosp import controlo
 
-
-class ControloDelib:
+class ControloDelib(controlo.Controlo):
 
     def __init__(self, planeador):
         self.__planeador = planeador
