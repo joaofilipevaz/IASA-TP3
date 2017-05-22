@@ -5,8 +5,8 @@ class ModeloPlan:
 
     @abc.abstractmethod
     def estados(self):
-        """processa"""
+        abstract
 
     @abc.abstractmethod
     def operadores(self):
-        """processa"""
+        abstract
