@@ -21,6 +21,7 @@ class ControloDelib(controlo.Controlo):
         if self.objectivo:
 
     def __executar(self):
+        self.__planeador.obter_accao()
 
     def processar(self, percepcao):
         self._assimilar(percepcao)
