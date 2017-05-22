@@ -1,5 +1,6 @@
 import abc
 
+
 class Planeador:
     _metaclass__ = abc.ABCMeta
 

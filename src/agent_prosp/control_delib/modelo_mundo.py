@@ -1,6 +1,19 @@
-import psa.a
+from psa.util import dirmov
+from lib.plan.modelo_plan import ModeloPlan
 
-class ModeloMundo:
+class ModeloMundo(ModeloPlan):
+
+    def __init__(self):
+        self.estado = None
+        self.__estados = []
+        self.__operadores = [OperadorMover(self, ang) for ang in dirmov]
+        self.alterado = False
+        #definicao do nada
+        self.__elementos = {}
+
+    @property
+    def estado(self):
+        return self.estado
 
     @property
     def alterado(self):
@@ -9,23 +22,21 @@ class ModeloMundo:
     @property
     def __elementos(self, map<K, V>):
 
-    def __init__(self):
-        None
-
     def obter_elem(self, estado):
-        percepcao.imagem = []
-        percepcao.imagem.keys():[(0,0),(0,1)]
+        return self.elementos[estado]
 
     def actualizar(self, percepcao):
-        actualizar posição agente
-        if elementosgravados != elementospercepçao:
-            estados = estados.percepcao
-            elementos = elementos.percepcao
-            self.alterado = true
+        self.estado = percepcao.actualizar #posição agente
+        if self.elementos.gravados != self.elementos.percepçao:
+            self.estados = self.__estados.percepcao
+            self.elementos = self.elementos.percepcao
+            self.alterado = True
         else:
-            self.alterado = false
+            self.alterado = False
 
     def operadores(self):
+        return self.operadores()
 
     def estados(self):
+        return self.__estados
 

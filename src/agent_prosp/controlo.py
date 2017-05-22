@@ -2,8 +2,8 @@ import abc
 
 
 class Controlo:
-    _metaclass__ = abc.ABCMeta
+    #_metaclass__ = abc.ABCMeta
 
-    @abc.abstractmethod
+    #@abc.abstractmethod
     def processar(self, processar):
-        """processa"""
+        abstract

@@ -1,4 +1,4 @@
-import psa.util.dirmov()
+from psa.util import dirmov
 import psa.util.mover()
 import psa.util.dist()
 import psa.util.Mover(angulo, ang_abs = true)
