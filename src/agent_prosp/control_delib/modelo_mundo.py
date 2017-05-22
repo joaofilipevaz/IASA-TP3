@@ -1,4 +1,4 @@
-
+import psa.a
 
 class ModeloMundo:
 
@@ -13,6 +13,8 @@ class ModeloMundo:
         None
 
     def obter_elem(self, estado):
+        percepcao.imagem = []
+        percepcao.imagem.keys():[(0,0),(0,1)]
 
     def actualizar(self, percepcao):
         actualizar posição agente

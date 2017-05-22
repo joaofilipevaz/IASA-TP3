@@ -1,5 +1,4 @@
 import abc
-import modelo_plan
 
 class Planeador:
     _metaclass__ = abc.ABCMeta

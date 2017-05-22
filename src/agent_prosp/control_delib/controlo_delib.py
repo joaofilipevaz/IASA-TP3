@@ -20,7 +20,6 @@ class ControloDelib(controlo.Controlo):
     def __planear(self):
         if self.objectivo:
 
-
     def __executar(self):
 
     def processar(self, percepcao):
