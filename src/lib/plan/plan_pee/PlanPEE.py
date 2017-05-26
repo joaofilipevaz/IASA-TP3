@@ -1,0 +1,21 @@
+
+
+class PlanPEE(Planeador):
+
+    def __init__(self, mec_pee):
+        self.__plano = []
+        self.__mec_pee = mec_pee
+
+    def planear(self, modelo_plan, estado_inicial, objectivos):
+
+
+    def obter_Accao(self, estado):
+
+
+    def plano_pendente(self):
+        if len(self.__plano) > 0:
+            return True
+        return False
+
+    def terminar_plano(self):
+        self.__plano = []
