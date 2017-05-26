@@ -9,13 +9,16 @@ class PlanPEE(Planeador):
     def planear(self, modelo_plan, estado_inicial, objectivos):
 
 
+
     def obter_Accao(self, estado):
+        return self.__plano.pop(0)
 
 
     def plano_pendente(self):
         if len(self.__plano) > 0:
             return True
         return False
+
 
     def terminar_plano(self):
         self.__plano = []
