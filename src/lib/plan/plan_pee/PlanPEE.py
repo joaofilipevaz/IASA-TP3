@@ -1,4 +1,4 @@
-
+from lib.plan.planeador import Planeador
 
 class PlanPEE(Planeador):
 
@@ -6,8 +6,9 @@ class PlanPEE(Planeador):
         self.__plano = []
         self.__mec_pee = mec_pee
 
-    def planear(self, modelo_plan, estado_inicial, objectivos):
 
+    def planear(self, modelo_plan, estado_inicial, objectivos):
+        self.__plano = objectivos
 
 
     def obter_Accao(self, estado):

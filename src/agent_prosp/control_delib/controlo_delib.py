@@ -1,12 +1,13 @@
 from psa.util import dirmov
 import psa.util.mover()
 import psa.util.dist()
-import psa.util.Mover(angulo, ang_abs = true)
+from psa.util import Mover(angulo, ang_abs = true)
+from lib.plan.planeador import Planeador
 
 import modelo_mundo
-from agent_prosp import controlo
+from agent_prosp.controlo import Controlo
 
-class ControloDelib(controlo.Controlo):
+class ControloDelib(Controlo):
 
     def __init__(self, planeador):
         self.__planeador = planeador
@@ -19,6 +20,7 @@ class ControloDelib(controlo.Controlo):
 
     def __planear(self):
         if self.objectivo:
+            return self.__planeador.planear()
 
     def __executar(self):
         self.__planeador.obter_accao()
