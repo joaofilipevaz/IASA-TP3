@@ -5,7 +5,7 @@ from lib.plan.plan_pee.ProblemaPlan import ProblemaPlan
 class PlanPEE(Planeador):
 
     def __init__(self, mec_pee):
-        self.__plano = []
+        self.__plano = None
         self.__mec_pee = mec_pee
 
 
@@ -14,6 +14,7 @@ class PlanPEE(Planeador):
         solucao = self.__mec_pee.resolver(problema)
         if solucao:
             self.__plano = [no.operador for no in solucao[1:]]
+
 
     def obter_Accao(self, estado):
         return self.__plano.pop(0)
@@ -26,4 +27,4 @@ class PlanPEE(Planeador):
 
 
     def terminar_plano(self):
-        self.__plano = []
+        self.__plano = None
