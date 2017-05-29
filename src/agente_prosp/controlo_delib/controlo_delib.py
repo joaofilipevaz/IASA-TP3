@@ -1,10 +1,8 @@
 from psa.util import dirmov
-import psa.util.mover()
-import psa.util.dist()
-from psa.util import Mover(angulo, ang_abs = true)
+from psa.util import mover
+from psa.util import dist
+from psa.accao import Mover #(angulo, ang_abs = true)
 from lib.plan.planeador import Planeador
-
-import modelo_mundo
 from agente_prosp.controlo import Controlo
 
 class ControloDelib(Controlo):
@@ -33,3 +31,4 @@ class ControloDelib(Controlo):
         return self.__executar()
 
     def _assimilar(self, per):
+        abstract

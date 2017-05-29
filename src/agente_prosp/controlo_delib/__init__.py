@@ -1,2 +1,0 @@
-import controlo_delib
-import modelo_mundo
