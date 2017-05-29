@@ -4,7 +4,7 @@ from psa.util import dist
 class ProblemaPlan(ProblemaHeur):
 
     def __init__(self, estado_inicial, estado_final, operadores):
-        super(ProblemaPlan, self).__init__()
+        super(ProblemaPlan, self).__init__(estado_inicial, estado_final, operadores)
         self.__estado_final = estado_final
 
     def objectivo(self, estado):
