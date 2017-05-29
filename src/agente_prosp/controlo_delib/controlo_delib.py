@@ -5,7 +5,7 @@ from psa.util import Mover(angulo, ang_abs = true)
 from lib.plan.planeador import Planeador
 
 import modelo_mundo
-from agent_prosp.controlo import Controlo
+from agente_prosp.controlo import Controlo
 
 class ControloDelib(Controlo):
 

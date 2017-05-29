@@ -1,4 +1,4 @@
-from agent_prosp import controlo
+from agente_prosp import controlo
 
 
 class ControloReact(controlo):
