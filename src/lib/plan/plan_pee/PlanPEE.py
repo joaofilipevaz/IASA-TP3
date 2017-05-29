@@ -1,4 +1,6 @@
 from lib.plan.planeador import Planeador
+from lib.plan.plan_pee.ProblemaPlan import ProblemaPlan
+
 
 class PlanPEE(Planeador):
 
@@ -8,7 +10,10 @@ class PlanPEE(Planeador):
 
 
     def planear(self, modelo_plan, estado_inicial, objectivos):
-        self.__plano = objectivos
+        problema = ProblemaPlan(estado_inicial, objectivos[0], modelo_plan.objectivos())
+        solucao = self.__mec_pee.resolver(problema)
+        if solucao:
+            self.__plano = solucao.
 
 
     def obter_Accao(self, estado):
