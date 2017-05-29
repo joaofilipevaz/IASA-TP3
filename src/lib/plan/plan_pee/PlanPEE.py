@@ -13,8 +13,7 @@ class PlanPEE(Planeador):
         problema = ProblemaPlan(estado_inicial, objectivos[0], modelo_plan.objectivos())
         solucao = self.__mec_pee.resolver(problema)
         if solucao:
-            self.__plano = solucao.
-
+            self.__plano = [no.operador for no in solucao[1:]]
 
     def obter_Accao(self, estado):
         return self.__plano.pop(0)
