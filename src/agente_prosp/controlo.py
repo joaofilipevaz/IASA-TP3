@@ -1,9 +1,9 @@
 import abc
 
 
-class Controlo:
-    #_metaclass__ = abc.ABCMeta
+class Controlo(object):
+    __metaclass__ = abc.ABCMeta
 
-    #@abc.abstractmethod
-    def processar(self, processar):
-        abstract
+    @abc.abstractmethod
+    def processar(self, percepcao):
+        """accao"""

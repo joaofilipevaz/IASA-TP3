@@ -4,14 +4,16 @@ from psa.util import dist
 from psa.accao import Mover #(angulo, ang_abs = true)
 from lib.plan.planeador import Planeador
 from agente_prosp.controlo import Controlo
+from agente_prosp.controlo_delib.modelo_mundo import ModeloMundo
 
 class ControloDelib(Controlo):
 
     def __init__(self, planeador):
         self.__planeador = planeador
+        self.__modelo_mundo = ModeloMundo.__init__()
 
     def __reconsiderar(self):
-        return self.__modelo_mundo.ModeloMundo.alterado() or self.__planeador.plano_pendente()
+        return self.__modelo_mundo.alterado or self.__planeador.plano_pendente()
 
     def __deliberar(self):
         self.objectivo = "todos os alvos"
@@ -24,11 +26,12 @@ class ControloDelib(Controlo):
         self.__planeador.obter_accao()
 
     def processar(self, percepcao):
-        self._assimilar(percepcao)
+        self.__assimilar(percepcao)
         if self.__reconsiderar():
             self.__deliberar()
             self.__planear()
         return self.__executar()
 
-    def _assimilar(self, per):
-        abstract
+    def __assimilar(self, per):
+        self.__modelo_mundo.actualizar(per)
+

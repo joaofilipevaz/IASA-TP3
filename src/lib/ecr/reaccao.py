@@ -1,12 +1,13 @@
 import abc
+from lib.ecr.comportamento import Comportamento
 
 
-def Reaccao(comportamento):
+class Reaccao(Comportamento):
 
     def activar(self, percepcao):
-        estimulo = self.detectar_estimulo(percepcao)
+        estimulo = self._detectar_estimulo(percepcao)
         if estimulo is not None and estimulo is not False:
-            resposta = self.gerar_resposta(estimulo)
+            resposta = self._gerar_resposta(estimulo)
             return resposta
 
     @abc.abstractmethod

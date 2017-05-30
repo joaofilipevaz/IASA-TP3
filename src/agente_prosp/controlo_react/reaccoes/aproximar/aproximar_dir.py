@@ -9,10 +9,10 @@ class AproximarDir(Reaccao):
         self.__direccao = direccao
         self.__accao = Mover(direccao)
 
-    def detectar_estimulo(self, percepcao):
+    def _detectar_estimulo(self, percepcao):
         if percepcao[self.__direccao].alvo:
             return percepcao[self.__direccao].distancia
 
-    def gerar_resposta(self, estimulo):
+    def _gerar_resposta(self, estimulo):
         prioridade = 1 / (1 + estimulo)
         return Resposta(self.__accao, prioridade)

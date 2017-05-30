@@ -7,8 +7,8 @@ class AgenteProspector(Agente):
         self.__controlo = controlo
 
     def executar(self):
-        percepcao = self._percepcionar()
-        accao = self._processar(percepcao)
+        percepcao = self.__percepcionar()
+        accao = self.__processar(percepcao)
         if accao is not None:
             self.__actuar(accao)
 
