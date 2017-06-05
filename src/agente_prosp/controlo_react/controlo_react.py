@@ -6,4 +6,5 @@ class ControloReact(Controlo):
         self.__comportamento = comportamento
 
     def processar(self, percepcao):
+        print self.__comportamento
         return self.__comportamento.activar(percepcao).accao
