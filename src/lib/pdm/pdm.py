@@ -6,14 +6,9 @@ class Pdm(ModeloPDM):
         self.__gama = gama
         self.__delta_max = delta_max
 
-
-
     def utilidade(self, modelo):
         S = modelo.S
         A = modelo.A
-        R = modelo.R
-        T = modelo.T
-        gama = self.__gama
         U = { s:0 for s in S()}
         while True:
             Uant = U.copy()
@@ -24,9 +19,25 @@ class Pdm(ModeloPDM):
             # se o delta for menor que o delta max
             if delta < self.__delta_max:
                 break
+        return U
 
 
     def util_Accao(self, s, a, U, modelo):
+        R = modelo.R
+        T = modelo.T
+        gama = self.__gama
 
-                U[s] = max(p*R(s, a, sn) + gama*Uant[sn]) for ()
+        return sum(p*(R(s, a, sn) + gama*U[sn]) for (p, sn) in T(s, a))
+
+    def politica(self, U, modelo):
+        S, A = modelo.S, modelo.A
+        pol = {}
+        for s in S():
+            pol[s] = max(A(s), key=lambda a: self.util_Accao(s, a, U, modelo))
+
+
+
+
+    def resolver(self, modelo):
+
 
