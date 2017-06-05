@@ -22,7 +22,7 @@ class Pdm(ModeloPDM):
         return U
 
 
-    def util_Accao(self, s, a, U, modelo):
+    def util_accao(self, s, a, U, modelo):
         R = modelo.R
         T = modelo.T
         gama = self.__gama
