@@ -16,7 +16,8 @@ class ControloDelib(Controlo):
         return self.__modelo_mundo.alterado or self.__planeador.plano_pendente()
 
     def __deliberar(self):
-        self.objectivo = "todos os alvos"
+        self.objectivo = [estado for estado in self.__modelo_mundo.estados()
+                          if self.__modelo_mundo.obter_elem(estado) == "alvo"]
 
     def __planear(self):
         if self.objectivo:
