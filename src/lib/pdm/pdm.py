@@ -34,10 +34,12 @@ class Pdm(ModeloPDM):
         pol = {}
         for s in S():
             pol[s] = max(A(s), key=lambda a: self.util_Accao(s, a, U, modelo))
-
-
+        return pol
 
 
     def resolver(self, modelo):
+        U = self.utilidade(modelo)
+        pol = self.politica(U, modelo)
+        return U, pol
 
 
