@@ -14,7 +14,8 @@ class Pdm(ModeloPDM):
             Uant = U.copy()
             delta = 0
             for s in S():
-                U[s] = max(self.util_accao(s, a, Uant, modelo)) for a in A(s)
+                # U[s] = max(self.util_accao(s, a, Uant, modelo)) for a in A(s)
+                U[s] = max(A(s), key=lambda a: self.util_accao(s, a, Uant, modelo))
                 delta = max(delta, abs(U[s] - Uant[s]))
             # se o delta for menor que o delta max
             if delta < self.__delta_max:
@@ -29,11 +30,12 @@ class Pdm(ModeloPDM):
 
         return sum(p*(R(s, a, sn) + gama*U[sn]) for (p, sn) in T(s, a))
 
+
     def politica(self, U, modelo):
         S, A = modelo.S, modelo.A
         pol = {}
         for s in S():
-            pol[s] = max(A(s), key=lambda a: self.util_Accao(s, a, U, modelo))
+            pol[s] = max(A(s), key=lambda a: self.util_accao(s, a, U, modelo))
         return pol
 
 
@@ -41,5 +43,3 @@ class Pdm(ModeloPDM):
         U = self.utilidade(modelo)
         pol = self.politica(U, modelo)
         return U, pol
-
-
