@@ -1,5 +1,3 @@
-
-
 class Resposta:
     def __init__(self, accao, prioridade=0.0):
         self._accao = accao
