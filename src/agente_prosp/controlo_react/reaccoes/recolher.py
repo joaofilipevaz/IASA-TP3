@@ -6,6 +6,7 @@ from lib.ecr.hierarquia import *
 
 
 class Recolher(Hierarquia):
+
     def __init__(self):
         super(Recolher, self).__init__(
             [Aproximar(), Evitar(), Contornar(), Explorar()])
