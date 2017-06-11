@@ -1,5 +1,6 @@
 from psa.util import dirmov
 from lib.plan.modelo_plan import ModeloPlan
+from agente_prosp.controlo_delib.operador_mover import OperadorMover
 
 
 class ModeloMundo(ModeloPlan):
@@ -40,4 +41,3 @@ class ModeloMundo(ModeloPlan):
 
     def estados(self):
         return self.__estados
-

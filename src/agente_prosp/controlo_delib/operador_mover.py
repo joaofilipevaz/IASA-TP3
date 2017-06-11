@@ -3,7 +3,7 @@ from psa.util import mover
 from psa.util import dist
 
 
-class OperadorMover():
+class OperadorMover:
 
     @property
     def accao(self):
