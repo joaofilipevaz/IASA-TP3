@@ -1,8 +1,8 @@
-from lib.ecr.comportamento import Comportamento
+from lib.ecr.comport_comp import ComportComp
 
 
-class Prioridade(Comportamento):
+class Prioridade(ComportComp):
 
-    def selecionar_respostas(self, respostas):
+    def selecionar_resposta(self, respostas):
         if respostas:
             return max(respostas, key=lambda resp: resp.prioridade)
