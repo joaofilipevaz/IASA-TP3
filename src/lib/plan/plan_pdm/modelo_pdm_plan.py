@@ -1,8 +1,11 @@
+from lib.pdm.modelo_pdm import ModeloPDM
 
 
-class ModeloPDMPlan():
+class ModeloPDMPlan(ModeloPDM):
 
-    #def __init__(self):
+    def __init__(self, modelo_plan, objectivos):
+        self.__modelo_plan = modelo_plan
+        self.__objectivos = objectivos
 
     def __iniciar_modelo(self, modelo_plan):
         self.__S=modelo_plan.estados()

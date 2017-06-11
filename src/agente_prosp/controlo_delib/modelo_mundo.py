@@ -3,7 +3,7 @@ from lib.plan.modelo_plan import ModeloPlan
 from agente_prosp.controlo_delib.operador_mover import OperadorMover
 
 
-class ModeloMundo(ModeloPlan):
+class ModeloMundo:
 
     def __init__(self):
         self.estado = None
