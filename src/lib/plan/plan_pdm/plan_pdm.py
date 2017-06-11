@@ -16,9 +16,11 @@ class PlanPDM(Planeador, Pdm):
 
 
     def plano_pendente(self):
+        return self.
 
 
     def terminar_plano(self):
+
 
 
 
