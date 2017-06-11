@@ -14,8 +14,7 @@ class PlanPEE(Planeador):
         if solucao:
             self.__plano = [no.operador for no in solucao[1:]]
 
-
-    def obter_Accao(self, estado):
+    def obter_accao(self, estado):
         if self.__plano:
             return self.__plano.pop(0)
 
