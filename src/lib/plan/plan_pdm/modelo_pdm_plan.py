@@ -1,29 +1,30 @@
 from lib.pdm.modelo_pdm import ModeloPDM
+from lib.plan.modelo_plan import ModeloPlan
 
 
-class ModeloPDMPlan(ModeloPDM):
+class ModeloPDMPlan(ModeloPDM, ModeloPlan):
 
     def __init__(self, modelo_plan, objectivos):
         self.__modelo_plan = modelo_plan
         self.__objectivos = objectivos
 
     def __iniciar_modelo(self, modelo_plan):
-        self.__S=modelo_plan.estados()
-        self.__A=modelo_plan.operadores()
+        self.__S = modelo_plan.estados()
+        self.__A = modelo_plan.operadores()
         for s in self.__S:
             for a in self.__A:
-                self.__gerar_modelo(s,a)
+                self.__gerar_modelo(s, a)
 
     def __gerar_modelo(self, s, a):
         sn = a.aplicar(s)
         if sn is None:
-            self.__T[(s,a)]=[]
+            self.__T[(s, a)] = []
         else:
-            self.__T[(s,a)]=[(1,sn)]
-            self.__R[(s,a,sn)]= self.__gerar_recompensa(s,a,sn)
+            self.__T[(s, a)] = [(1, sn)]
+            self.__R[(s, a, sn)] = self.__gerar_recompensa(s, a, sn)
 
     def __gerar_recompensa(self, s, a, sn):
-        r = -a.custo(s,sn)
+        r = -a.custo(s, sn)
         if sn in self.__objectivos:
             r += self.rmax
         return r
