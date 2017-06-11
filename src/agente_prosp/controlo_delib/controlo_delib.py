@@ -2,15 +2,15 @@ from psa.util import dirmov
 from psa.util import mover
 from psa.util import dist
 from psa.accao import Mover #(angulo, ang_abs = true)
-from lib.plan.planeador import Planeador
 from agente_prosp.controlo import Controlo
 from agente_prosp.controlo_delib.modelo_mundo import ModeloMundo
+
 
 class ControloDelib(Controlo):
 
     def __init__(self, planeador):
         self.__planeador = planeador
-        self.__modelo_mundo = ModeloMundo.__init__()
+        self.__modelo_mundo = ModeloMundo()
 
     def __reconsiderar(self):
         return self.__modelo_mundo.alterado or self.__planeador.plano_pendente()
@@ -35,4 +35,3 @@ class ControloDelib(Controlo):
 
     def __assimilar(self, per):
         self.__modelo_mundo.actualizar(per)
-

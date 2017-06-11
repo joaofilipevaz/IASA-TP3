@@ -1,6 +1,7 @@
 from psa.util import dirmov
 from lib.plan.modelo_plan import ModeloPlan
 
+
 class ModeloMundo(ModeloPlan):
 
     def __init__(self):
@@ -27,7 +28,7 @@ class ModeloMundo(ModeloPlan):
 
     def actualizar(self, percepcao):
         self.estado = percepcao.actualizar #posição agente
-        if self.elementos.gravados != self.elementos.percepçao:
+        if self.elementos.gravados != self.elementos.percepcao:
             self.estados = self.__estados.percepcao
             self.elementos = self.elementos.percepcao
             self.alterado = True

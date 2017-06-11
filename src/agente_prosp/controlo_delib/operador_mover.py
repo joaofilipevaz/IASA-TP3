@@ -2,16 +2,17 @@ from psa.accao import Mover
 from psa.util import mover
 from psa.util import dist
 
+
 class OperadorMover():
 
     @property
     def accao(self):
         return self.accao
 
-    def OperadorMover(self, modelo_mundo, ang):
+    def __init__(self, modelo_mundo, ang):
         self.__modelo_mundo = modelo_mundo
         self.__ang = ang
-        self.accao = Mover(ang, ang_abs = True)
+        self.accao = Mover(ang, ang_abs=True)
 
     def aplicar(self, estado):
         novo_estado = mover(estado, self.__ang)
