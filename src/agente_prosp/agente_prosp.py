@@ -18,5 +18,5 @@ class AgenteProspector(Agente):
     def __processar(self, percepcao):
         return self.__controlo.processar(percepcao)
 
-    def __actuar(self):
+    def __actuar(self, accao):
         return self.actuador.actuar(accao)
