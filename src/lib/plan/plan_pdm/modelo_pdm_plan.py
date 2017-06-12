@@ -7,6 +7,7 @@ class ModeloPDMPlan(ModeloPDM, ModeloPlan):
     def __init__(self, modelo_plan, objectivos):
         self.__modelo_plan = modelo_plan
         self.__objectivos = objectivos
+        self.__rmax = 1
 
     def __iniciar_modelo(self, modelo_plan):
         self.__S = modelo_plan.estados()
@@ -26,7 +27,7 @@ class ModeloPDMPlan(ModeloPDM, ModeloPlan):
     def __gerar_recompensa(self, s, a, sn):
         r = -a.custo(s, sn)
         if sn in self.__objectivos:
-            r += self.rmax
+            r += self.__rmax
         return r
 
     def estados(self):
