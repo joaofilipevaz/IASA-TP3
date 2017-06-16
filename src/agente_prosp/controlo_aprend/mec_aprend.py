@@ -16,10 +16,10 @@ class MecAprend(SelAccao):
         self.__aprend_ref = AprendQ(self.__mem_aprend, self.__sel_accao, alfa, gama)
 
     def aprender(self, s, a, r, sn):
-        pass
+        self.__aprend_ref.aprender(s, a, r, sn)
 
     def seleccionar_accao(self, s):
-        pass
+        self.__sel_accao.seleccionar_accao(s)
 
     def mostrar(self, s):
         psa.vismod.limpar()
