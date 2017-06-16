@@ -1,6 +1,7 @@
 from agente_prosp.controlo import Controlo
 from agente_prosp.controlo_aprend.mec_aprend import MecAprend
 from psa.util import dirmov
+from psa.actuador import Mover
 
 class ControloAprendRef(Controlo):
 
@@ -11,7 +12,15 @@ class ControloAprendRef(Controlo):
         self.__mec_aprend = MecAprend(self.__a)
 
     def processar(self, percepcao):
-        pass
+        sn = percepcao.posicao
+        if self.s is not None:
+            a = percepcao.orientacao
+            r = self.__gerar_reforco(percepcao)
+            self.__mec_aprend.aprender(self.s, a, r, sn)
+        an = self.__mec_aprend.seleccionar_accao(sn)
+        self.s = sn
+        if an is not None:
+            return Mover(an, arg_abs=True)
 
     def __gerar_reforco(self, percepcao):
         r = -percepcao.custo_mov
