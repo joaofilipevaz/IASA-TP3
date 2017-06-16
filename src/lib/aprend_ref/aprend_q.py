@@ -7,10 +7,12 @@ class AprendQ(AprendRef):
         super(AprendQ, self).__init__(mem_aprend, sel_accao)
         self._alfa = alfa
         self._gama = gama
+        self._mem_aprend = mem_aprend
+        self._sel_accao = sel_accao
 
     def aprender(self, s, a, r, sn):
-        an = self.sel_accao.maxaccao(s,a)
+        an = self._sel_accao.max_accao(s)
         qsa = self._mem_aprend.obter(s, a)
-        qsnan = self.mem_aprend.obter(sn, an)
-        q = actualizar(s,a,q)
+        qsnan = self._mem_aprend.obter(sn, an)
+        q = self._mem_aprend.actualizar(s, a, qsa)
 
