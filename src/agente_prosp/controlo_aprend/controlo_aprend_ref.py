@@ -1,7 +1,7 @@
 from agente_prosp.controlo import Controlo
 from agente_prosp.controlo_aprend.mec_aprend import MecAprend
-from psa.util import dirmov
-from psa.actuador import Mover
+from psa.psa5.util import dirmov
+from psa.psa5.actuador import Mover
 
 class ControloAprendRef(Controlo):
 
