@@ -1,10 +1,8 @@
-from lib.aprend_ref.memoria_aprend import MemoriaAprend
-from lib.aprend_ref.sel_accao import SelAccao
-from random import random, choice, shuffle
+from random import random, choice
 import numpy as np
 
 
-class SelAccaoEGreedy():
+class SelAccaoEGreedy:
 
     def __init__(self, mem_aprend, accoes, epsilon):
         self.__epsilon = epsilon

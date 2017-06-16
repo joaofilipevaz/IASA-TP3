@@ -9,8 +9,8 @@ class AprendQ(AprendRef):
         self._gama = gama
 
     def aprender(self, s, a, r, sn):
-        an = sel_accao.maxaccao(s,a)
+        an = self.sel_accao.maxaccao(s,a)
         qsa = self._mem_aprend.obter(s, a)
-        qsnan = mem_aprend.obter(sn, an)
+        qsnan = self.mem_aprend.obter(sn, an)
         q = actualizar(s,a,q)
 
