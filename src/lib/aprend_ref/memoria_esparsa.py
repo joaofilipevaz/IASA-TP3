@@ -5,13 +5,10 @@ class MemoriaEsparsa(MemoriaAprend):
 
     def __init__(self, valor_omissao=0.0):
         self.__valor_omissao = valor_omissao
-
-    @classmethod
-    def MemoriaEsparsa(cls):
-        return cls
+        self.__memoria = {}
 
     def actualizar(self, s, a, q):
-        pass
+        self.__memoria[(s, a)] = q
 
     def obter(self, s, a):
-        pass
+        self.__memoria.get((s, a), self.__valor_omissao)
