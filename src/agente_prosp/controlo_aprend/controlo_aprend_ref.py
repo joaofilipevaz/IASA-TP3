@@ -13,12 +13,12 @@ class ControloAprendRef(Controlo):
 
     def processar(self, percepcao):
         sn = percepcao.posicao
-        if self.s is not None:
+        if self.__s is not None:
             a = percepcao.orientacao
             r = self.__gerar_reforco(percepcao)
-            self.__mec_aprend.aprender(self.s, a, r, sn)
+            self.__mec_aprend.aprender(self.__s, a, r, sn)
         an = self.__mec_aprend.seleccionar_accao(sn)
-        self.s = sn
+        self.__s = sn
         if an is not None:
             return Mover(an, arg_abs=True)
 

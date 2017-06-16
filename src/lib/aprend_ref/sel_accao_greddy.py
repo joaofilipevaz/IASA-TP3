@@ -1,9 +1,10 @@
 from lib.aprend_ref.memoria_aprend import MemoriaAprend
 from lib.aprend_ref.sel_accao import SelAccao
 from random import random, choice, shuffle
+import numpy as np
 
 
-class SelAccaoEGreedy(MemoriaAprend, SelAccao):
+class SelAccaoEGreedy():
 
     def __init__(self, mem_aprend, accoes, epsilon):
         self.__epsilon = epsilon
@@ -18,8 +19,8 @@ class SelAccaoEGreedy(MemoriaAprend, SelAccao):
         return accao
 
     def max_accao(self, s):
-        accoes = shuffle(self.__accoes)
-        return max(accoes, key=lambda a: self.__mem_aprend.obter(s, a))
+        np.random.shuffle(self.__accoes)
+        return max(self.__accoes, key=lambda a: self.__mem_aprend.obter(s, a))
 
     def explorar(self, s):
         return choice(self.__accoes)
