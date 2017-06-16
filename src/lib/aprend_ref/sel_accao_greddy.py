@@ -18,7 +18,8 @@ class SelAccaoEGreedy(MemoriaAprend, SelAccao):
         return accao
 
     def max_accao(self, s):
-        shuffle(self.__accoes)
+        accoes = shuffle(self.__accoes)
+        return max(accoes, key=lambda a: self.__mem_aprend.obter(s, a))
 
     def explorar(self, s):
-        choice(self.__accoes)
+        return choice(self.__accoes)
