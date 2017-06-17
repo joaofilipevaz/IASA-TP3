@@ -1,6 +1,6 @@
-from psa.accao import Mover
-from psa.util import mover
-from psa.util import dist
+from psa.psa5.accao import Mover
+from psa.psa5.util import mover
+from psa.psa5.util import dist
 
 
 class OperadorMover:
