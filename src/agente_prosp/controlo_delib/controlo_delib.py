@@ -1,9 +1,10 @@
-from psa.util import dirmov
+from psa.psa5.util import dirmov
 from psa.util import mover
 from psa.util import dist
 from psa.accao import Mover #(angulo, ang_abs = true)
 from agente_prosp.controlo import Controlo
 from agente_prosp.controlo_delib.modelo_mundo import ModeloMundo
+import psa.util
 
 
 class ControloDelib(Controlo):
@@ -35,3 +36,9 @@ class ControloDelib(Controlo):
 
     def __assimilar(self, per):
         self.__modelo_mundo.actualizar(per)
+
+    def mostrar(self, s):
+        vis = psa.vis(1)
+        vis.limpar()
+        self.__planeador.mostrar(vis, s)
+        self.__modelo_mundo.mostrar(vis)

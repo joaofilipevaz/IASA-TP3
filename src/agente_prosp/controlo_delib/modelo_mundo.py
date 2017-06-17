@@ -38,3 +38,8 @@ class ModeloMundo:
 
     def estados(self):
         return self.__estados
+
+    def mostrar(self, vis):
+        lista_obs = ["alvo", "obstaculo"]
+        alvos_obs = {key: value for (key, value) in self.__elementos.items() if value in lista_obs}
+        vis.elementos(alvos_obs)
