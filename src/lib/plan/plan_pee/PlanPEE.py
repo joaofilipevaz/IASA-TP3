@@ -9,7 +9,7 @@ class PlanPEE(Planeador):
         self.__mec_pee = mec_pee
 
     def planear(self, modelo_plan, estado_inicial, objectivos):
-        problema = ProblemaPlan(estado_inicial, objectivos[0], modelo_plan.objectivos())
+        problema = ProblemaPlan(estado_inicial, objectivos[0], modelo_plan.operadores())
         solucao = self.__mec_pee.resolver(problema)
         if solucao:
             self.__plano = [no.operador for no in solucao[1:]]
@@ -23,3 +23,9 @@ class PlanPEE(Planeador):
 
     def terminar_plano(self):
         self.__plano = None
+
+    def mostrar(self, vis, s):
+        if self.__plano:
+            vis.campo(self.__mec_pee.obter_explorados())
+            vis.plano(s, self.__plano)
+            vis.marcar([s], linha=1)

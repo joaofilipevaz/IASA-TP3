@@ -44,5 +44,5 @@ class ControloDelib(Controlo):
     def mostrar(self, s):
         vis = psa.vis(1)
         vis.limpar()
-        self.__planeador.mostrar(vis)
+        self.__planeador.mostrar(vis, s)
         self.__modelo_mundo.mostrar(vis)

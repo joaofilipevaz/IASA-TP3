@@ -5,13 +5,19 @@ from lib.plan.modelo_plan import ModeloPlan
 class ModeloPDMPlan(ModeloPDM, ModeloPlan):
 
     def __init__(self, modelo_plan, objectivos):
-        self.__modelo_plan = modelo_plan
+        self.__S = []
+        self.__A = []
+        self.__T = {}
+        self.__R = {}
+        self.__rmax = 10
         self.__objectivos = objectivos
-        self.__rmax = 1
+        self.__iniciar_modelo(modelo_plan)
 
     def __iniciar_modelo(self, modelo_plan):
         self.__S = modelo_plan.estados()
         self.__A = modelo_plan.operadores()
+        print self.__A
+        print modelo_plan.operadores()
         for s in self.__S:
             for a in self.__A:
                 self.__gerar_modelo(s, a)
@@ -30,17 +36,17 @@ class ModeloPDMPlan(ModeloPDM, ModeloPlan):
             r += self.__rmax
         return r
 
-    def estados(self):
-        return self.__S
+    #def estados(self):
+     #   return self.__S
 
-    def operadores(self):
-        return self.__A
+    #def operadores(self):
+    #    return self.__A
 
     def S(self):
         return self.__S
 
-    def A(self, estado):
-        return self.__A(estado)
+    def A(self, s):
+        return self.__A
 
     def T(self, s, a):
         return self.__T[(s, a)]

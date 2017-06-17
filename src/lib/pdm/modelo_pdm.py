@@ -9,7 +9,7 @@ class ModeloPDM:
         """lista de estados"""
 
     @abc.abstractmethod
-    def A(self, estado):
+    def A(self, s):
         """lista de operadores"""
 
     @abc.abstractmethod

@@ -14,6 +14,8 @@ class Pdm:
             for s in S():
                 # U[s] = max(self.util_accao(s, a, Uant, modelo)) for a in A(s)
                 U[s] = max(A(s), key=lambda a: self.util_accao(s, a, Uant, modelo))
+                print "U" + str(U[s])
+                print "Uant" + str(Uant[s])
                 delta = max(delta, abs(U[s] - Uant[s]))
             # se o delta for menor que o delta max
             if delta < self.__delta_max:

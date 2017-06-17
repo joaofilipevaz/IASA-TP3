@@ -7,7 +7,7 @@ class ModeloMundo:
     def __init__(self):
         self.__estado = None
         self.__estados = []
-        self.__operadores = [OperadorMover(self, ang) for ang in dirmov]
+        self.__operadores = [OperadorMover(self, ang) for ang in dirmov()]
         self.__alterado = False
         #definicao do nada
         self.__elementos = {}
@@ -21,20 +21,20 @@ class ModeloMundo:
         return self.__alterado
 
     def obter_elem(self, estado):
-        return self.__elementos[estado]
+        return self.__elementos.get(estado)
 
     def actualizar(self, percepcao):
         # posicao agente
-        self.__estado = percepcao.actualizar
-        if self.__elementos.gravados != self.__elementos.percepcao:
-            self.__estados = self.__estados.percepcao
-            self.__elementos = self.__elementos.percepcao
+        if self.__elementos != percepcao.imagem:
+            self.__elementos = percepcao.imagem
             self.__alterado = True
+            self.__estados = self.__elementos.keys()
         else:
             self.__alterado = False
+        self.__estado = percepcao.posicao
 
     def operadores(self):
-        return self.operadores()
+        return self.__operadores
 
     def estados(self):
         return self.__estados
