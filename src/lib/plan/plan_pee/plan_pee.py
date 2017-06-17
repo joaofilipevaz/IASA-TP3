@@ -1,5 +1,5 @@
 from lib.plan.planeador import Planeador
-from lib.plan.plan_pee.ProblemaPlan import ProblemaPlan
+from lib.plan.plan_pee.problema_plan import ProblemaPlan
 
 
 class PlanPEE(Planeador):

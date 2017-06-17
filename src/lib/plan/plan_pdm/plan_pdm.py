@@ -30,8 +30,8 @@ class PlanPDM(Planeador):
         self.__politica = {}
         self.__utilidade = {}
 
-    def mostrar(self, vis):
+    def mostrar(self, vis, s):
         if self.__politica:
             vis.limpar()
             vis.campo(self.__utilidade)
-            vis.campo(self.__politica)
+            vis.politica(self.__politica)

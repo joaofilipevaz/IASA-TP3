@@ -3,6 +3,7 @@ from psa.psa5.util import mover
 from psa.psa5.util import dist
 from pee.modprob.operador import Operador
 
+
 class OperadorMover(Operador):
 
     @property

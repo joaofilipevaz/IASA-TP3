@@ -4,7 +4,7 @@ from psa.util import dist
 from psa.accao import Mover #(angulo, ang_abs = true)
 from agente_prosp.controlo import Controlo
 from agente_prosp.controlo_delib.modelo_mundo import ModeloMundo
-import psa.util
+import psa.util as psa
 
 
 class ControloDelib(Controlo):
