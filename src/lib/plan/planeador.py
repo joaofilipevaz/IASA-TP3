@@ -6,16 +6,20 @@ class Planeador:
 
     @abc.abstractmethod
     def planear(self, modelo_plan, estado_inicial, objectivos):
-        abstract
+        "abstract"
 
     @abc.abstractmethod
     def obter_accao(self, estado):
-        abstract
+        "abstract"
 
     @abc.abstractmethod
     def plano_pendente(self):
-        abstract
+        "abstract"
 
     @abc.abstractmethod
     def terminar_plano(self):
-        abstract
+        "abstract"
+
+    #@abc.abstractmethod
+    #def mostrar(self, vis, s):
+    #   "abstract"

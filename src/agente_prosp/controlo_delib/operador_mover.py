@@ -7,16 +7,16 @@ class OperadorMover:
 
     @property
     def accao(self):
-        return self.accao
+        return self.__accao
 
     def __init__(self, modelo_mundo, ang):
         self.__modelo_mundo = modelo_mundo
         self.__ang = ang
-        self.accao = Mover(ang, ang_abs=True)
+        self.__accao = Mover(ang, ang_abs=True)
 
     def aplicar(self, estado):
         novo_estado = mover(estado, self.__ang)
-        elem = self.__modelo_mundo.get_elem(novo_estado)
+        elem = self.__modelo_mundo.obter_elem(novo_estado)
         if elem is not 'obs':
             return novo_estado
         else:
