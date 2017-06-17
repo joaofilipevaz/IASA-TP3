@@ -20,6 +20,8 @@ class OperadorMover(Operador):
         elem = self.__modelo_mundo.obter_elem(novo_estado)
         if elem in ["vazio", "alvo"]:
             return novo_estado
+        else:
+            return None
 
     def custo(self, estado, novo_estado):
         return max(dist(estado, novo_estado), 1)

@@ -1,4 +1,4 @@
-from psa.psa5.agente import Agente
+from psa.agente import Agente
 
 
 class AgenteProspector(Agente):
