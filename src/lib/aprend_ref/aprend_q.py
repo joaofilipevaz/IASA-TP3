@@ -11,8 +11,9 @@ class AprendQ(AprendRef):
         self._sel_accao = sel_accao
 
     def aprender(self, s, a, r, sn):
-        an = self._sel_accao.max_accao(s)
+        an = self._sel_accao.max_accao(sn)
         qsa = self._mem_aprend.obter(s, a)
         qsnan = self._mem_aprend.obter(sn, an)
-        q = self._mem_aprend.actualizar(s, a, qsnan)
-
+        # algoritmo sarsa
+        q = qsa + self._alfa * (r + self._gama * (qsnan - qsa))
+        self._mem_aprend.actualizar(s, a, q)
