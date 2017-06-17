@@ -3,6 +3,10 @@ from lib.aprend_ref.memoria_aprend import MemoriaAprend
 
 class MemoriaEsparsa(MemoriaAprend):
 
+    @property
+    def get_memoria(self):
+        return self.__memoria
+
     def __init__(self, valor_omissao=0.0):
         self.__valor_omissao = valor_omissao
         self.__memoria = {}

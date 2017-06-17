@@ -24,4 +24,4 @@ class MecAprend(SelAccao):
     def mostrar(self, s):
         psa.vismod.limpar()
         psa.vismod.aprendref(self.__aprend_ref)
-        psa.visvec.accoesestado(s, self.__accoes, self.__mem_aprend.memoria)
+        psa.visvec.accoesestado(s, self.__accoes, self.__mem_aprend.get_memoria)
