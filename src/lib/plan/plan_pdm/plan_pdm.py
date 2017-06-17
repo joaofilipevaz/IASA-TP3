@@ -6,8 +6,8 @@ from modelo_pdm_plan import ModeloPDMPlan
 class PlanPDM(Planeador):
 
     def __init__(self):
-        self.__gama = 0.0
-        self.__delta_max = 0
+        self.__gama = 0.9
+        self.__delta_max = 1
         self.__utilidade = {}
         self.__politica = {}
         self.__pdm = Pdm(self.__gama, self.__delta_max)
