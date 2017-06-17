@@ -20,6 +20,6 @@ class Planeador:
     def terminar_plano(self):
         "abstract"
 
-    #@abc.abstractmethod
-    #def mostrar(self, vis, s):
-    #   "abstract"
+    @abc.abstractmethod
+    def mostrar(self, vis, s):
+       "abstract"

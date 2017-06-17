@@ -9,7 +9,7 @@ class ModeloMundo:
         self.__estados = []
         self.__operadores = [OperadorMover(self, ang) for ang in dirmov()]
         self.__alterado = False
-        #definicao do nada
+        # definicao do nada
         self.__elementos = {}
 
     @property

@@ -23,6 +23,8 @@ class Pdm:
     def util_accao(self, s, a, U, modelo):
         R = modelo.R
         T = modelo.T
+        # print T(s, a)
+        # print sum(p*(R(s, a, sn) + self.__gama*U[sn]) for p, sn in T(s, a))
         return sum(p*(R(s, a, sn) + self.__gama*U[sn]) for p, sn in T(s, a))
 
     def politica(self, U, modelo):

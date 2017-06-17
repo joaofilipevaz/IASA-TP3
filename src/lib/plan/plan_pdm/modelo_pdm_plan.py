@@ -24,23 +24,17 @@ class ModeloPDMPlan(ModeloPDM, ModeloPlan):
 
     def __gerar_modelo(self, s, a):
         sn = a.aplicar(s)
-        if sn is None:
-            self.__T[(s, a)] = []
-        else:
+        if sn is not None:
             self.__T[(s, a)] = [(1, sn)]
             self.__R[(s, a, sn)] = self.__gerar_recompensa(s, a, sn)
+        else:
+            self.__T[(s, a)] = []
 
     def __gerar_recompensa(self, s, a, sn):
         r = -a.custo(s, sn)
         if sn in self.__objectivos:
             r += self.__rmax
         return r
-
-    #def estados(self):
-     #   return self.__S
-
-    #def operadores(self):
-    #    return self.__A
 
     def S(self):
         return self.__S
