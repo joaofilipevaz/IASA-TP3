@@ -10,10 +10,12 @@ class SelAccaoEGreedy:
         self.__accoes = accoes
 
     def seleccionar_accao(self, s):
-        if random() > self.__epsilon:
+        if random() < self.__epsilon:
             accao = self.max_accao(s)
+            print "esmifra"
         else:
             accao = self.explorar(s)
+            print "explorar"
         return accao
 
     def max_accao(self, s):

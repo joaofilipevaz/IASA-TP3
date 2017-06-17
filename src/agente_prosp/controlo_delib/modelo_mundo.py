@@ -1,40 +1,37 @@
-from psa.util import dirmov
-from lib.plan.modelo_plan import ModeloPlan
+from psa.psa5.util import dirmov
 from agente_prosp.controlo_delib.operador_mover import OperadorMover
 
 
 class ModeloMundo:
 
     def __init__(self):
-        self.estado = None
+        self.__estado = None
         self.__estados = []
         self.__operadores = [OperadorMover(self, ang) for ang in dirmov]
-        self.alterado = False
+        self.__alterado = False
         #definicao do nada
         self.__elementos = {}
 
     @property
     def estado(self):
-        return self.estado
+        return self.__estado
 
     @property
     def alterado(self):
-        return self.alterado
-
-    @property
-    def __elementos(self, map<K, V>):
+        return self.__alterado
 
     def obter_elem(self, estado):
-        return self.elementos[estado]
+        return self.__elementos[estado]
 
     def actualizar(self, percepcao):
-        self.estado = percepcao.actualizar #posição agente
-        if self.elementos.gravados != self.elementos.percepcao:
-            self.estados = self.__estados.percepcao
-            self.elementos = self.elementos.percepcao
-            self.alterado = True
+        # posicao agente
+        self.__estado = percepcao.actualizar
+        if self.__elementos.gravados != self.__elementos.percepcao:
+            self.__estados = self.__estados.percepcao
+            self.__elementos = self.__elementos.percepcao
+            self.__alterado = True
         else:
-            self.alterado = False
+            self.__alterado = False
 
     def operadores(self):
         return self.operadores()
