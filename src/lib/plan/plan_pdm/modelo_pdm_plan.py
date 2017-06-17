@@ -9,7 +9,7 @@ class ModeloPDMPlan(ModeloPDM, ModeloPlan):
         self.__A = []
         self.__T = {}
         self.__R = {}
-        self.__rmax = 10
+        self.__rmax = 20
         self.__objectivos = objectivos
         self.__iniciar_modelo(modelo_plan)
 

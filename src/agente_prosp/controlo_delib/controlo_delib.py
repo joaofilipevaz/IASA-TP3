@@ -2,7 +2,6 @@ from agente_prosp.controlo import Controlo
 from agente_prosp.controlo_delib.modelo_mundo import ModeloMundo
 import psa.util
 
-
 class ControloDelib(Controlo):
 
     def __init__(self, planeador):
@@ -19,12 +18,14 @@ class ControloDelib(Controlo):
 
     def __planear(self):
         if self.__objectivos:
-            return self.__planeador.planear(self.__modelo_mundo, self.__modelo_mundo.estado, self.__objectivos)
+            self.__planeador.planear(self.__modelo_mundo, self.__modelo_mundo.estado, self.__objectivos)
         else:
             self.__planeador.terminar_plano()
 
     def __executar(self):
-        return self.__planeador.obter_accao(self.__modelo_mundo.estado)
+        operador = self.__planeador.obter_accao(self.__modelo_mundo.estado)
+        if operador is not None:
+            return operador.accao
 
     def processar(self, percepcao):
         self.__assimilar(percepcao)

@@ -8,4 +8,4 @@ class AgenteDeTeste(Agente):
         self.actuador.actuar(Avancar())
 
 psa.iniciar("amb/amb1.das")
-psa.executar(AgenteDeTeste)
+psa.executar(AgenteDeTeste())
