@@ -3,6 +3,7 @@ from agente_prosp.controlo_aprend.mec_aprend import MecAprend
 from psa.psa5.util import dirmov
 from psa.psa5.actuador import Mover
 
+
 class ControloAprendRef(Controlo):
 
     def __init__(self):
@@ -20,7 +21,7 @@ class ControloAprendRef(Controlo):
         an = self.__mec_aprend.seleccionar_accao(sn)
         self.__s = sn
         if an is not None:
-            return Mover(an, arg_abs=True)
+            return Mover(an)
 
     def __gerar_reforco(self, percepcao):
         r = -percepcao.custo_mov

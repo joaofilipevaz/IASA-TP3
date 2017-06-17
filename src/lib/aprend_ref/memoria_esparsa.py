@@ -11,4 +11,4 @@ class MemoriaEsparsa(MemoriaAprend):
         self.__memoria[(s, a)] = q
 
     def obter(self, s, a):
-        self.__memoria.get((s, a), self.__valor_omissao)
+        return self.__memoria.get((s, a), self.__valor_omissao)

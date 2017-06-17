@@ -14,5 +14,5 @@ class AprendQ(AprendRef):
         an = self._sel_accao.max_accao(s)
         qsa = self._mem_aprend.obter(s, a)
         qsnan = self._mem_aprend.obter(sn, an)
-        q = self._mem_aprend.actualizar(s, a, qsa)
+        q = self._mem_aprend.actualizar(s, a, qsnan)
 

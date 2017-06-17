@@ -19,7 +19,7 @@ class MecAprend(SelAccao):
         self.__aprend_ref.aprender(s, a, r, sn)
 
     def seleccionar_accao(self, s):
-        self.__sel_accao.seleccionar_accao(s)
+        return self.__sel_accao.seleccionar_accao(s)
 
     def mostrar(self, s):
         psa.vismod.limpar()
