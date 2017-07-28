@@ -17,9 +17,9 @@ from pee.prof.procura_prof_iter import ProcuraProfIter
 
 psa.iniciar("amb/amb1.das")
 #psa.executar(AgenteProspector(ControloDelib(PlanPEE(ProcuraAA()))))
-#psa.executar(AgenteProspector(ControloDelib(PlanPEE(ProcuraCustoUnif()))))
+psa.executar(AgenteProspector(ControloDelib(PlanPEE(ProcuraCustoUnif()))))
 #psa.executar(AgenteProspector(ControloDelib(PlanPEE(ProcuraSofrega()))))
 
 #psa.executar(AgenteProspector(ControloDelib(PlanPEE(ProcuraLarg()))))
 #psa.executar(AgenteProspector(ControloDelib(PlanPEE(ProcuraProf()))))
-psa.executar(AgenteProspector(ControloDelib(PlanPEE(ProcuraProfIter()))))
+#psa.executar(AgenteProspector(ControloDelib(PlanPEE(ProcuraProfIter()))))
