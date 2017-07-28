@@ -3,6 +3,7 @@ from agente_prosp.controlo_aprend.mec_aprend import MecAprend
 from psa.util import dirmov
 #from psa.psa5.actuador import Mover
 from psa.accao import Mover
+import psa.util
 
 
 class ControloAprendRef(Controlo):
@@ -19,9 +20,11 @@ class ControloAprendRef(Controlo):
             a = percepcao.orientacao
             r = self.__gerar_reforco(percepcao)
             self.__mec_aprend.aprender(self.__s, a, r, sn)
+
         an = self.__mec_aprend.seleccionar_accao(sn)
         self.__s = sn
         if an is not None:
+            #self.mostrar(self.__s)
             return Mover(an, ang_abs=True)
 
     def __gerar_reforco(self, percepcao):
@@ -31,3 +34,8 @@ class ControloAprendRef(Controlo):
         elif percepcao.colisao:
             r += -self.__rmax
         return r
+
+    def mostrar(self, s):
+        vis = psa.vis(1)
+        vis.limpar()
+        self.__mec_aprend.mostrar(s, vis)

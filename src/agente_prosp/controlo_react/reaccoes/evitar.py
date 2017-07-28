@@ -4,6 +4,7 @@ from lib.ecr.reaccao import Reaccao
 
 
 class Evitar(Reaccao):
+
     def _detectar_estimulo(self, percepcao):
         return percepcao[FRT].contacto and percepcao[FRT].obstaculo
 

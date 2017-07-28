@@ -15,5 +15,5 @@ class AprendQ(AprendRef):
         qsa = self._mem_aprend.obter(s, a)
         qsnan = self._mem_aprend.obter(sn, an)
         # algoritmo sarsa
-        q = qsa + self._alfa * (r + self._gama * (qsnan - qsa))
+        q = qsa + self._alfa * (r + (self._gama * qsnan) - qsa)
         self._mem_aprend.actualizar(s, a, q)

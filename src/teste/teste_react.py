@@ -4,7 +4,7 @@ import sys
 sys.path.append(".../agente_prosp")
 sys.path.append(".../lib")
 
-from agente_prosp import AgenteProspector
+from agente_prosp.agente_prosp import AgenteProspector
 from agente_prosp.controlo_react.controlo_react import ControloReact
 from agente_prosp.controlo_react.reaccoes.recolher import Recolher as Comportamento
 

@@ -9,7 +9,7 @@ import psa.psa5 as psa
 
 class MecAprend(SelAccao):
 
-    def __init__(self, accoes, alfa=1, gama=0.9, epsilon=0.01, nsim=100):
+    def __init__(self, accoes, alfa=1, gama=0.9, epsilon=0.1, nsim=100):
         self.__accoes = accoes
         self.__mem_aprend = MemoriaEsparsa()
         self.__sel_accao = SelAccaoEGreedy(self.__mem_aprend, self.__accoes, epsilon)
@@ -21,7 +21,7 @@ class MecAprend(SelAccao):
     def seleccionar_accao(self, s):
         return self.__sel_accao.seleccionar_accao(s)
 
-    def mostrar(self, s):
-        psa.vismod.limpar()
-        psa.vismod.aprendref(self.__aprend_ref)
-        psa.visvec.accoesestado(s, self.__accoes, self.__mem_aprend.get_memoria)
+    def mostrar(self, s, vis):
+        #vis.limpar()
+        vis.aprendref(self.__aprend_ref)
+        vis.accoesestado(s, self.__accoes, self.__mem_aprend.get_memoria)
